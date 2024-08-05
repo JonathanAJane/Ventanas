@@ -121,7 +121,7 @@ public class frmMenu extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("MIEMBROS");
+        jLabel2.setText("CATEGORIAS");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
 
         pnlMover.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 130, -1));

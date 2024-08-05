@@ -155,8 +155,9 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(191, 17, 145));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setText("jona");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 170, 180));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ReserV--removebg-preview (1).png"))); // NOI18N
+        jLabel6.setText(" ");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 320, 300));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 490));
 
