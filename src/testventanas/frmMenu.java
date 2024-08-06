@@ -138,8 +138,8 @@ public class frmMenu extends javax.swing.JFrame {
         btnAjustes.setBackground(new java.awt.Color(204, 204, 204));
         btnAjustes.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         btnAjustes.setForeground(new java.awt.Color(102, 102, 102));
-        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-ajustes-24.png"))); // NOI18N
-        btnAjustes.setText(" Ajustes");
+        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-acerca-de-24.png"))); // NOI18N
+        btnAjustes.setText("Acerca de");
         btnAjustes.setBorder(null);
         btnAjustes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         pnlMover.add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 130, 40));
