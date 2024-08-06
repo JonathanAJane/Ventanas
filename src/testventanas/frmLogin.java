@@ -60,7 +60,6 @@ public class frmLogin extends javax.swing.JFrame {
         lblVer = new javax.swing.JLabel();
         lblOcultar = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO_DE_SESION");
@@ -154,11 +153,6 @@ public class frmLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(191, 17, 145));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ReserV--removebg-preview (1).png"))); // NOI18N
-        jLabel6.setText(" ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 40, 320, 300));
-
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 490));
 
         pack();
@@ -240,7 +234,6 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
