@@ -33,15 +33,14 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jTextField2 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jTextField3 = new javax.swing.JTextField();
+        txtApellidos = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -49,9 +48,11 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtContraseña = new javax.swing.JPasswordField();
         jLabel11 = new javax.swing.JLabel();
         btnAceptar = new javax.swing.JButton();
+        txtTelefono = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
 
@@ -88,10 +89,6 @@ public class frmRegistro extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(191, 17, 145));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 330, 10));
 
-        jTextField1.setBackground(new java.awt.Color(235, 235, 235));
-        jTextField1.setBorder(null);
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 300, 30));
-
         jLabel3.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
         jLabel3.setText("NOMBRE");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
@@ -103,9 +100,9 @@ public class frmRegistro extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(191, 17, 145));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 330, 10));
 
-        jTextField2.setBackground(new java.awt.Color(235, 235, 235));
-        jTextField2.setBorder(null);
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 300, 30));
+        txtNombre.setBackground(new java.awt.Color(235, 235, 235));
+        txtNombre.setBorder(null);
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 300, 30));
 
         jLabel5.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
         jLabel5.setText("APELLIDOS");
@@ -118,9 +115,9 @@ public class frmRegistro extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(191, 17, 145));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, 10));
 
-        jTextField3.setBackground(new java.awt.Color(235, 235, 235));
-        jTextField3.setBorder(null);
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 30));
+        txtApellidos.setBackground(new java.awt.Color(235, 235, 235));
+        txtApellidos.setBorder(null);
+        jPanel2.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 30));
 
         jLabel7.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
         jLabel7.setText("CREA UNA CONTRASEÑA");
@@ -147,8 +144,10 @@ public class frmRegistro extends javax.swing.JFrame {
         jSeparator6.setForeground(new java.awt.Color(191, 17, 145));
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 330, 10));
 
-        jPasswordField1.setText("jPasswordField1");
-        jPanel2.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 182, 250, 30));
+        txtContraseña.setBackground(new java.awt.Color(235, 235, 235));
+        txtContraseña.setText("jPasswordField1");
+        txtContraseña.setBorder(null);
+        jPanel2.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 182, 250, 30));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-ocultar-24.png"))); // NOI18N
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 30, 40));
@@ -163,6 +162,14 @@ public class frmRegistro extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 120, 30));
+
+        txtTelefono.setBackground(new java.awt.Color(235, 235, 235));
+        txtTelefono.setBorder(null);
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 300, 30));
+
+        txtCorreo.setBackground(new java.awt.Color(235, 235, 235));
+        txtCorreo.setBorder(null);
+        jPanel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 300, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 380, 410));
 
@@ -252,7 +259,6 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -261,8 +267,10 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
