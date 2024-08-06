@@ -4,6 +4,8 @@
  */
 package testventanas;
 
+import clases.Conexion;
+
 /**
  *
  * @author Jonathan Jané
@@ -14,5 +16,9 @@ public class TestVentanas {
      * @param args the command line arguments
      */
   
-    
+   // Conexion test= new Conexion();
+     public static void main(String[] args) {
+    //Conexion conBD= new Conexion("localhost", "root", "", "bdreserv");
+    //conBD.conectar();
+     }
 }
