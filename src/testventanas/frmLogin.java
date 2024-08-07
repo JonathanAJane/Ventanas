@@ -59,6 +59,7 @@ public class frmLogin extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         lblVer = new javax.swing.JLabel();
         lblOcultar = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -90,7 +91,7 @@ public class frmLogin extends javax.swing.JFrame {
                 btnIngresarActionPerformed(evt);
             }
         });
-        pnlIfoUsuario.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 120, 30));
+        pnlIfoUsuario.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 120, 30));
 
         jTextField1.setBackground(new java.awt.Color(234, 234, 234));
         jTextField1.setFont(new java.awt.Font("Dubai Light", 0, 18)); // NOI18N
@@ -123,6 +124,7 @@ public class frmLogin extends javax.swing.JFrame {
         pnlIfoUsuario.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 40, 50));
 
         jButton2.setBackground(new java.awt.Color(234, 234, 234));
+        jButton2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(191, 17, 145));
         jButton2.setText("Crear cuenta nueva");
         jButton2.setBorder(null);
@@ -148,6 +150,13 @@ public class frmLogin extends javax.swing.JFrame {
             }
         });
         pnlIfoUsuario.add(lblOcultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, 30, 40));
+
+        jButton1.setBackground(new java.awt.Color(234, 234, 234));
+        jButton1.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(191, 17, 145));
+        jButton1.setText("Ingresar como estudiante");
+        jButton1.setBorder(null);
+        pnlIfoUsuario.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 150, 30));
 
         getContentPane().add(pnlIfoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 390, 490));
 
@@ -228,6 +237,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
