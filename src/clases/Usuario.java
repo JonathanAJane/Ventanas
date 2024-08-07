@@ -23,7 +23,7 @@ public class Usuario {
     private int id_usuario;
     private String nombre;
     private String apellido;
-    private String contraseña;
+    private String password;
     private String correo;
     private String telefono;
     
@@ -35,7 +35,7 @@ public class Usuario {
         this.id_usuario=0;
         this.nombre="";
         this.apellido="";
-        this.contraseña="";
+        this.password="";
         this.correo="";
         this.telefono="";
         
@@ -43,11 +43,11 @@ public class Usuario {
         
         
     }
-    public Usuario(int id_usuario, String nombre, String apellido, String contraseña, String correo, String telefono) {
+    public Usuario(int id_usuario, String nombre, String apellido, String password, String correo, String telefono) {
         this.id_usuario = id_usuario;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.contraseña = contraseña;
+        this.password = password;
         this.correo = correo;
         this.telefono = telefono;
     }
@@ -64,8 +64,8 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContraseña(String password) {
+        this.password = password;
     }
 
     public void setCorreo(String correo) {
@@ -93,7 +93,7 @@ public class Usuario {
     }
 
     public String getContraseña() {
-        return contraseña;
+        return password;
     }
 
     public String getCorreo() {
@@ -143,7 +143,7 @@ public class Usuario {
                 registro[0] = rs.getString("idUsuario");
                 registro[1] = rs.getString("nombre");
                 registro[2] = rs.getString("apellido");
-                registro[3] = rs.getString("contraseña");
+                registro[3] = rs.getString("password");
                 registro[4] = rs.getString("correo");
                 registro[5] = rs.getString("etelefono");
             }
@@ -186,7 +186,7 @@ public class Usuario {
         query="UPDATE usuarios\n" +
                 " SET nombre='"+getNombre()+"'," +
                 " apellido='"+getApellido()+"'," +
-                " contraseña='"+getContraseña()+"'," +
+                " password='"+getContraseña()+"'," +
                 " correo='"+getCorreo()+"'," +
                 " telefono='"+getTelefono()+"'," +
                 " WHERE id_usuario="+getId_usuario()+";";
@@ -202,7 +202,7 @@ public class Usuario {
         return respuesta;
     }
     
-    /*//Metodo para eliminar un usuario
+    //Metodo para eliminar un usuario
     public boolean eliminarUsuario(int id_usuario) throws SQLException{
         boolean respuesta;
         conBD.conectar();
@@ -213,14 +213,14 @@ public class Usuario {
         try{            
             sql.execute(query);
             respuesta=true;
-            autonumericoid_usuario();
+            autonumericoIdUsuario();
         }catch (SQLException e) {
             respuesta=false;
             System.out.println(e.getMessage());
         }
         conBD.desconectar();
         return respuesta;
-    }*/
+    }
     
     //Metodo para inicializar a id_usuario
     public boolean autonumericoIdUsuario() throws SQLException{
@@ -255,7 +255,7 @@ public class Usuario {
                 registros[0] = rs.getString("idUsuario");
                 registros[1] = rs.getString("nombre");
                 registros[2] = rs.getString("apellido");
-                registros[3] = rs.getString("contraseña");
+                registros[3] = rs.getString("password");
                 registros[4] = rs.getString("correo");
                 registros[5] = rs.getString("telefono");
                 usuarios.add(registros);
@@ -279,6 +279,32 @@ public class Usuario {
             JOptionPane.showMessageDialog(null, e);
            return null;
         }
+    }
+    
+    
+    public String BuscarUsuario(String usuario)// throws SQLException
+    {
+        String password="";
+        conBD.conectar();
+        Statement sql=conBD.smtSQL();
+        ResultSet rs=null;
+        String query="SELECT password FROM usuarios WHERE email ='"+usuario+"'";
+        System.out.println(query);
+        //JOptionPane.showMessageDialog(parentComponent, query);
+        try
+        {
+            System.out.println("-----------------"+password);
+            rs=sql.executeQuery(query);
+            while (rs.next()) 
+                password=rs.getString("password");
+            System.out.println("-----------------"+password);
+        }
+        catch(SQLException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return password;     
+        
     }
     
     //METODO MOSTRAR TABLA DE USUARIOS

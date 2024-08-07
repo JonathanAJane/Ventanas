@@ -5,8 +5,12 @@
 package testventanas;
 
 
+import clases.Conexion;
+import clases.Usuario;
 import java.awt.Image;
+import java.sql.Statement;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,7 +31,7 @@ public class frmLogin extends javax.swing.JFrame {
         //mostrar_logo();
     }
     
-    
+    Usuario user=new Usuario();
     //ADITION METHOD
     /*private void mostrar_logo(){
     ImageIcon icono = new javax.swing.ImageIcon(getClass().getResource("/img/icono.png"));
@@ -50,8 +54,8 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        txtContra = new javax.swing.JPasswordField();
+        txtCorreo = new javax.swing.JTextField();
+        txtContraseña = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
@@ -101,23 +105,22 @@ public class frmLogin extends javax.swing.JFrame {
         });
         pnlIfoUsuario.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 120, 30));
 
-        jTextField1.setBackground(new java.awt.Color(234, 234, 234));
-        jTextField1.setFont(new java.awt.Font("Dubai Light", 0, 18)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(191, 17, 139));
-        jTextField1.setText("  ");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreo.setBackground(new java.awt.Color(234, 234, 234));
+        txtCorreo.setFont(new java.awt.Font("Dubai Light", 0, 18)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(191, 17, 139));
+        txtCorreo.setBorder(null);
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtCorreoActionPerformed(evt);
             }
         });
-        pnlIfoUsuario.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 280, 30));
+        pnlIfoUsuario.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 280, 30));
 
-        txtContra.setBackground(new java.awt.Color(234, 234, 234));
-        txtContra.setFont(new java.awt.Font("Dubai Light", 0, 18)); // NOI18N
-        txtContra.setForeground(new java.awt.Color(191, 17, 139));
-        txtContra.setBorder(null);
-        pnlIfoUsuario.add(txtContra, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 240, 30));
+        txtContraseña.setBackground(new java.awt.Color(234, 234, 234));
+        txtContraseña.setFont(new java.awt.Font("Dubai Light", 0, 18)); // NOI18N
+        txtContraseña.setForeground(new java.awt.Color(191, 17, 139));
+        txtContraseña.setBorder(null);
+        pnlIfoUsuario.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 240, 30));
 
         jSeparator1.setForeground(new java.awt.Color(191, 17, 145));
         pnlIfoUsuario.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 330, 10));
@@ -164,7 +167,7 @@ public class frmLogin extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(191, 17, 145));
         jButton1.setText("Ingresar como estudiante");
         jButton1.setBorder(null);
-        pnlIfoUsuario.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, 150, 30));
+        pnlIfoUsuario.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 170, 30));
 
         getContentPane().add(pnlIfoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 390, 490));
 
@@ -213,16 +216,16 @@ public class frmLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void lblVerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblVerMouseClicked
     
         //Evento para hacer visible la contraseña x medio de la label ojo
         lblVer.setVisible(false); 
         lblOcultar.setVisible(true);
-        txtContra.setEchoChar((char)0);
+        txtContraseña.setEchoChar((char)0);
     }//GEN-LAST:event_lblVerMouseClicked
 
     private void lblOcultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOcultarMouseClicked
@@ -230,16 +233,35 @@ public class frmLogin extends javax.swing.JFrame {
         //Evento para ocultar la contra ojo
         lblVer.setVisible(true);
         lblOcultar.setVisible(false);
-        txtContra.setEchoChar('●');
+        txtContraseña.setEchoChar('●');
         
     }//GEN-LAST:event_lblOcultarMouseClicked
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
        
+        String correo;
+        String contraseña="",pass="8";
+        Conexion conBD= new Conexion("localhost", "root", "", "bdreserv");
+        
+        correo=txtCorreo.getText();
+        contraseña=txtContraseña.getText();
+        
+        //metodo buscar usuario
+        pass=user.BuscarUsuario(correo);
+        JOptionPane.showMessageDialog(rootPane, contraseña);
+        JOptionPane.showMessageDialog(rootPane, pass);
+        if(pass.equals(contraseña))
+        {
+        
         frmMenu frmMenu = new frmMenu();
         frmMenu.setVisible(true);
         this.dispose();
-        
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Verifique el correo o la contraseña", "Error",JOptionPane.ERROR_MESSAGE);
+        }
+            
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
@@ -297,10 +319,10 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblOcultar;
     private javax.swing.JLabel lblVer;
     private javax.swing.JPanel pnlIfoUsuario;
-    private javax.swing.JPasswordField txtContra;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtCorreo;
     // End of variables declaration//GEN-END:variables
 }
