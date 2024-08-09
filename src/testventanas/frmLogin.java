@@ -65,14 +65,10 @@ public class frmLogin extends javax.swing.JFrame {
         lblOcultar = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO_DE_SESION");
@@ -174,38 +170,23 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(191, 17, 145));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(191, 17, 145));
-
         jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(235, 235, 235));
         jLabel7.setText("ReserV");
-        jPanel2.add(jLabel7);
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 240, 60));
-
-        jPanel4.setBackground(new java.awt.Color(239, 239, 239));
-
-        jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(191, 17, 145));
-        jLabel8.setText("+");
-        jPanel4.add(jLabel8);
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 90, 50));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/jona.png"))); // NOI18N
-        jLabel6.setText(" ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 260, 360));
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(235, 235, 235));
         jLabel9.setText("tus eventos.");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, 20));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, 20));
 
         jLabel10.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(235, 235, 235));
         jLabel10.setText("La mejor manera de gestionar");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, 20));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, 20));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Sistemas_Duros-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, 10, 440, 240));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 490));
 
@@ -305,18 +286,14 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblOcultar;

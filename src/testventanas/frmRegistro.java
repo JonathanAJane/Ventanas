@@ -49,12 +49,17 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         txtContraseña = new javax.swing.JPasswordField();
-        jLabel11 = new javax.swing.JLabel();
         btnAceptar = new javax.swing.JButton();
         txtTelefono = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        txtConfirmarContraseña = new javax.swing.JPasswordField();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,7 +83,7 @@ public class frmRegistro extends javax.swing.JFrame {
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dubai Light", 0, 12)); // NOI18N
         jLabel2.setText("TELEFONO");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
 
@@ -89,9 +94,9 @@ public class frmRegistro extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(191, 17, 145));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 330, 10));
 
-        jLabel3.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
-        jLabel3.setText("NOMBRE");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Dubai Light", 0, 12)); // NOI18N
+        jLabel3.setText("CONFIRMAR CONTRASEÑA");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-bolígrafo-24.png"))); // NOI18N
         jLabel4.setText(" ");
@@ -104,7 +109,7 @@ public class frmRegistro extends javax.swing.JFrame {
         txtNombre.setBorder(null);
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 300, 30));
 
-        jLabel5.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Dubai Light", 0, 12)); // NOI18N
         jLabel5.setText("APELLIDOS");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
@@ -119,7 +124,7 @@ public class frmRegistro extends javax.swing.JFrame {
         txtApellidos.setBorder(null);
         jPanel2.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 30));
 
-        jLabel7.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Dubai Light", 0, 12)); // NOI18N
         jLabel7.setText("CREA UNA CONTRASEÑA");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
@@ -128,12 +133,12 @@ public class frmRegistro extends javax.swing.JFrame {
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jSeparator4.setForeground(new java.awt.Color(191, 17, 145));
-        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 330, 10));
+        jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 150, 10));
 
         jSeparator5.setForeground(new java.awt.Color(191, 17, 145));
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 330, 10));
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 120, 10));
 
-        jLabel9.setFont(new java.awt.Font("Dubai Light", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Dubai Light", 0, 12)); // NOI18N
         jLabel9.setText("CORREO ELECTRÓNICO");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
@@ -147,10 +152,7 @@ public class frmRegistro extends javax.swing.JFrame {
         txtContraseña.setBackground(new java.awt.Color(235, 235, 235));
         txtContraseña.setText("jPasswordField1");
         txtContraseña.setBorder(null);
-        jPanel2.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 182, 250, 30));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-ocultar-24.png"))); // NOI18N
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 30, 40));
+        jPanel2.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 182, 120, 30));
 
         btnAceptar.setBackground(new java.awt.Color(191, 17, 145));
         btnAceptar.setForeground(new java.awt.Color(234, 234, 234));
@@ -171,19 +173,48 @@ public class frmRegistro extends javax.swing.JFrame {
         txtCorreo.setBorder(null);
         jPanel2.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 300, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 380, 410));
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-candado-24.png"))); // NOI18N
+        jLabel14.setText(" ");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+
+        txtConfirmarContraseña.setBackground(new java.awt.Color(235, 235, 235));
+        txtConfirmarContraseña.setText("jPasswordField1");
+        txtConfirmarContraseña.setBorder(null);
+        txtConfirmarContraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConfirmarContraseñaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtConfirmarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 120, 30));
+
+        jSeparator7.setForeground(new java.awt.Color(191, 17, 145));
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 150, 10));
+
+        jLabel11.setFont(new java.awt.Font("Dubai Light", 0, 12)); // NOI18N
+        jLabel11.setText("NOMBRE");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 380, 410));
 
         jLabel12.setBackground(new java.awt.Color(235, 235, 235));
-        jLabel12.setFont(new java.awt.Font("Dubai Medium", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel12.setText("SING IN ");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
+        jLabel12.setFont(new java.awt.Font("Dubai Medium", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Crea una cuenta");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
 
         jLabel13.setBackground(new java.awt.Color(235, 235, 235));
         jLabel13.setFont(new java.awt.Font("Dubai", 1, 36)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel13.setText("WELCOME !");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 190, 30));
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("BIENVENIDO !");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 230, 30));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Sistemas_Duros-removebg-preview.png"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-150, 30, 440, 240));
+
+        jLabel16.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(235, 235, 235));
+        jLabel16.setText("ReserV");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,6 +237,10 @@ public class frmRegistro extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void txtConfirmarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmarContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConfirmarContraseñaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,6 +284,9 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -266,8 +304,10 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtApellidos;
+    private javax.swing.JPasswordField txtConfirmarContraseña;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
