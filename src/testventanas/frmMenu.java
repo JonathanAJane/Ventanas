@@ -39,6 +39,7 @@ public class frmMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnPerfil = new javax.swing.JButton();
         btnAjustes = new javax.swing.JButton();
+        pnlContenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,6 +115,11 @@ public class frmMenu extends javax.swing.JFrame {
         btnCalendario.setActionCommand(" Calendario");
         btnCalendario.setBorder(null);
         btnCalendario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnCalendario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalendarioActionPerformed(evt);
+            }
+        });
         pnlMover.add(btnCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 130, 40));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
@@ -146,6 +152,19 @@ public class frmMenu extends javax.swing.JFrame {
 
         getContentPane().add(pnlMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 130, 380));
 
+        javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
+        pnlContenido.setLayout(pnlContenidoLayout);
+        pnlContenidoLayout.setHorizontalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
+        pnlContenidoLayout.setVerticalGroup(
+            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 550, 380));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -159,6 +178,12 @@ public class frmMenu extends javax.swing.JFrame {
        }
         
     }//GEN-LAST:event_btnMoverActionPerformed
+
+    private void btnCalendarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalendarioActionPerformed
+        // TODO add your handling code here:
+        //frmc
+        
+    }//GEN-LAST:event_btnCalendarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +232,7 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel pnlContenido;
     private javax.swing.JPanel pnlMover;
     // End of variables declaration//GEN-END:variables
 }

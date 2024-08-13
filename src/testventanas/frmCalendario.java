@@ -4,6 +4,17 @@
  */
 package testventanas;
 
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Denisse
@@ -15,7 +26,95 @@ public class frmCalendario extends javax.swing.JFrame {
      */
     public frmCalendario() {
         initComponents();
+        cargarAgenda();
+        
     }
+    
+    
+    DefaultTableModel modelo = new DefaultTableModel();
+    
+    public void cargarAgenda(){
+       
+          tblAgenda.setModel(modelo);
+          ResultSet rs = null;
+
+          int cantidadColumnas = 12;
+          int cantidadFilas = 7;
+
+          // SE AGREAN LOS NOMBRES DE COLUMNAS O ENCABEZADOS
+          modelo.addColumn("");
+          modelo.addColumn("08:00 am");
+          modelo.addColumn("09:00 am");
+          modelo.addColumn("10:00 am");
+          modelo.addColumn("11:00 am");
+          modelo.addColumn("12:00 pm");
+          modelo.addColumn("01:00 pm");
+          modelo.addColumn("02:00 pm");
+          modelo.addColumn("03:00 pm");
+          modelo.addColumn("04:00 pm");
+          modelo.addColumn("05:00 pm");
+          modelo.addColumn("06:00 pm");
+
+//
+//
+// |||||||||SE NECESITA AMPLIAR EL ALTO DE LAS CELDAS|||||||||||||
+//
+//
+
+          //SE DEFINE EL ANCHO DE CADA COLUMNA
+         // int[] anchos = {50, 200, 50, 50,50,50};
+
+          //ESTE FOR ASIGNA EL ANCHO A CADA COLUMNA
+          for (int i = 0; i < cantidadColumnas; i++) {
+              tblAgenda.getColumnModel().getColumn(i).setPreferredWidth(200);
+          }
+
+          
+          // J = Filas     I = Columnas
+          for (int j=0; j < cantidadFilas; j++)
+          {
+              Object[] filas = new Object[cantidadColumnas];
+              for (int i = 0; i < cantidadColumnas; i++) 
+              {
+                  if (i==0&&j==0)
+                    filas[i] = "Aditorio";
+                  else if (i==0&&j==1) 
+                    filas[i] = "Laboratorio Computo A";
+                  else if (i==0&&j==2) 
+                    filas[i] = "Laboratorio Computo B";
+                  else if (i==0&&j==3) 
+                    filas[i] = "Laboratorio Computo C";
+                  else if (i==0&&j==4) 
+                    filas[i] = "Laboratorio Computo Diseño";
+                  else if (i==0&&j==5) 
+                    filas[i] = "Laboratorio Computo Comunicación";
+                      
+                  /*switch(j)
+                      {
+                        case 0:                                  
+                            filas[i] = "Aditorio";
+                        case 1:
+                            filas[i] = "Laboratorio Computo A";
+                        case 2:
+                            filas[i] = "Laboratorio Computo B";
+                        case 3:
+                            filas[i] = "Laboratorio Computo C";
+                        case 4:
+                            filas[i] = "Laboratorio Diseño";
+                        case 5:
+                            filas[i] = "Laboratorio Comunicación";                                  
+                      }*/
+              
+             // filas[0] = "Auditorio";
+              }
+              //filas[0] = "Auditorio";
+              
+              
+               modelo.addRow(filas);
+          }
+
+
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,21 +125,86 @@ public class frmCalendario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        calendar1 = new com.toedter.calendar.JDateChooser();
+        btnBuscar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblAgenda = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        calendar1.setDateFormatString("dd MM yyyy");
+        calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calendar1MouseClicked(evt);
+            }
+        });
+
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        tblAgenda.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tblAgenda);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 642, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(calendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(107, 107, 107)
+                .addComponent(btnBuscar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 344, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(calendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void calendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseClicked
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_calendar1MouseClicked
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        SimpleDateFormat formato=new SimpleDateFormat("yyyy-mm-dd");
+        Date fecha=null;
+        try {
+             fecha=formato.parse(calendar1.getJCalendar().toString());
+        } catch (ParseException ex) {
+            Logger.getLogger(frmCalendario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(rootPane, fecha.toString());
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +242,9 @@ public class frmCalendario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
+    private com.toedter.calendar.JDateChooser calendar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblAgenda;
     // End of variables declaration//GEN-END:variables
 }
