@@ -4,6 +4,10 @@
  */
 package testventanas;
 
+import clases.Usuario;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Denisse
@@ -16,6 +20,10 @@ public class frmRegistro extends javax.swing.JFrame {
     public frmRegistro() {
         initComponents();
     }
+    
+    
+    
+    Usuario user=new Usuario();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +48,7 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        txtApellidos = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -120,9 +128,9 @@ public class frmRegistro extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(191, 17, 145));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 330, 10));
 
-        txtApellidos.setBackground(new java.awt.Color(235, 235, 235));
-        txtApellidos.setBorder(null);
-        jPanel2.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 30));
+        txtApellido.setBackground(new java.awt.Color(235, 235, 235));
+        txtApellido.setBorder(null);
+        jPanel2.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 300, 30));
 
         jLabel7.setFont(new java.awt.Font("Dubai Light", 0, 12)); // NOI18N
         jLabel7.setText("CREA UNA CONTRASEÑA");
@@ -150,7 +158,6 @@ public class frmRegistro extends javax.swing.JFrame {
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 330, 10));
 
         txtContraseña.setBackground(new java.awt.Color(235, 235, 235));
-        txtContraseña.setText("jPasswordField1");
         txtContraseña.setBorder(null);
         jPanel2.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 182, 120, 30));
 
@@ -167,7 +174,7 @@ public class frmRegistro extends javax.swing.JFrame {
 
         txtTelefono.setBackground(new java.awt.Color(235, 235, 235));
         txtTelefono.setBorder(null);
-        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 300, 30));
+        jPanel2.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 140, 30));
 
         txtCorreo.setBackground(new java.awt.Color(235, 235, 235));
         txtCorreo.setBorder(null);
@@ -178,7 +185,6 @@ public class frmRegistro extends javax.swing.JFrame {
         jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
 
         txtConfirmarContraseña.setBackground(new java.awt.Color(235, 235, 235));
-        txtConfirmarContraseña.setText("jPasswordField1");
         txtConfirmarContraseña.setBorder(null);
         txtConfirmarContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -232,9 +238,41 @@ public class frmRegistro extends javax.swing.JFrame {
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
 
-        frmMenu frmMenu = new frmMenu();
-        frmMenu.setVisible(true);
-        this.dispose();
+        
+        
+        user=new Usuario(0,txtNombre.getText(),txtApellido.getText(),txtContraseña.getText()/*Usar el get correcto para obetener el String de la contraseña*/,txtTelefono.getText(),txtCorreo.getText());
+        
+        JOptionPane.showMessageDialog(null,txtContraseña.getText());
+        JOptionPane.showMessageDialog(null,txtConfirmarContraseña.getText());
+        
+        if(txtContraseña.getText() == null ? txtConfirmarContraseña.getText() == null : txtContraseña.getText().equals(txtConfirmarContraseña.getText()))
+        {
+        try {
+            user.insertarUsuario();
+            JOptionPane.showMessageDialog(null, "El registro se ha guardado correctamente.","WARNINESSAGE", JOptionPane.WARNING_MESSAGE);
+            
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.setVisible(true);
+            this.dispose();
+            
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,ex.getMessage());
+            //Logger.getLogger(FrmUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Las contraseñas deben ser iguales.","WARNINESSAGE", JOptionPane.WARNING_MESSAGE);
+            
+        
+        
+        
+        
+        
+        
+        
 
     }//GEN-LAST:event_btnAceptarActionPerformed
 
@@ -306,7 +344,7 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtApellido;
     private javax.swing.JPasswordField txtConfirmarContraseña;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtCorreo;

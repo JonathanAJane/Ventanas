@@ -33,13 +33,13 @@ public class frmMenu extends javax.swing.JFrame {
         pnlMover = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnSalir = new javax.swing.JButton();
         btnHome = new javax.swing.JButton();
         btnCalendario = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btnPerfil = new javax.swing.JButton();
         btnAjustes = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,20 +89,6 @@ public class frmMenu extends javax.swing.JFrame {
 
         pnlMover.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, -1));
 
-        btnSalir.setBackground(new java.awt.Color(204, 204, 204));
-        btnSalir.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        btnSalir.setForeground(new java.awt.Color(102, 102, 102));
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-volver-24 (1).png"))); // NOI18N
-        btnSalir.setText(" Salir");
-        btnSalir.setBorder(null);
-        btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-        pnlMover.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 130, 40));
-
         btnHome.setBackground(new java.awt.Color(204, 204, 204));
         btnHome.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         btnHome.setForeground(new java.awt.Color(102, 102, 102));
@@ -133,9 +119,9 @@ public class frmMenu extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         jLabel2.setText("CATEGORIAS");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 100, 16));
 
-        pnlMover.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 130, -1));
+        pnlMover.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 204, 130, 30));
 
         btnPerfil.setBackground(new java.awt.Color(204, 204, 204));
         btnPerfil.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
@@ -164,6 +150,19 @@ public class frmMenu extends javax.swing.JFrame {
             }
         });
         pnlMover.add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 130, 40));
+
+        btnSalir.setBackground(new java.awt.Color(204, 204, 204));
+        btnSalir.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(102, 102, 102));
+        btnSalir.setText("Cerrar Sesión");
+        btnSalir.setBorder(null);
+        btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        pnlMover.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 130, 40));
 
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
         pnlContenido.setLayout(pnlContenidoLayout);

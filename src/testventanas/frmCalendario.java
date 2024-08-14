@@ -26,6 +26,9 @@ public class frmCalendario extends javax.swing.JFrame {
      */
     public frmCalendario() {
         initComponents();
+        
+        jcFecha.setMinSelectableDate(new Date());
+        
         cargarAgenda();
         
     }
@@ -40,6 +43,8 @@ public class frmCalendario extends javax.swing.JFrame {
 
           int cantidadColumnas = 12;
           int cantidadFilas = 7;
+          
+          
 
           // SE AGREAN LOS NOMBRES DE COLUMNAS O ENCABEZADOS
           modelo.addColumn("");
@@ -125,17 +130,17 @@ public class frmCalendario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        calendar1 = new com.toedter.calendar.JDateChooser();
+        jcFecha = new com.toedter.calendar.JDateChooser();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAgenda = new javax.swing.JTable();
+        btnBuscar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        calendar1.setDateFormatString("dd MM yyyy");
-        calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jcFecha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                calendar1MouseClicked(evt);
+                jcFechaMouseClicked(evt);
             }
         });
 
@@ -159,15 +164,24 @@ public class frmCalendario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblAgenda);
 
+        btnBuscar2.setText("Buscar2");
+        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(calendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107)
+                .addComponent(jcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
                 .addComponent(btnBuscar)
+                .addGap(34, 34, 34)
+                .addComponent(btnBuscar2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 806, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,8 +192,10 @@ public class frmCalendario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(calendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
+                    .addComponent(jcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnBuscar)
+                        .addComponent(btnBuscar2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
                 .addContainerGap())
@@ -188,23 +204,36 @@ public class frmCalendario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void calendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseClicked
+    private void jcFechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcFechaMouseClicked
         // TODO add your handling code here:
         
         
-    }//GEN-LAST:event_calendar1MouseClicked
+    }//GEN-LAST:event_jcFechaMouseClicked
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         SimpleDateFormat formato=new SimpleDateFormat("yyyy-mm-dd");
         Date fecha=null;
         try {
-             fecha=formato.parse(calendar1.getJCalendar().toString());
+             fecha=formato.parse(jcFecha.getJCalendar().toString());
         } catch (ParseException ex) {
             Logger.getLogger(frmCalendario.class.getName()).log(Level.SEVERE, null, ex);
         }
         JOptionPane.showMessageDialog(rootPane, fecha.toString());
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
+        // TODO add your handling code here:
+        
+        //Leer la fecha de jCalendar chosser
+        Date jc_fecha=jcFecha.getDate();
+        //Para convertir la fecha en tipo long para posteriormnete convertirlo en formato reconcocible por MYSQL
+        long fecha=jc_fecha.getTime();
+        //Convertimos la fecha de tipo long a MySQL
+        java.sql.Date fecha_sql=new java.sql.Date(fecha);
+        //Mostramos la fecha
+        JOptionPane.showMessageDialog(null, fecha_sql);
+    }//GEN-LAST:event_btnBuscar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,8 +272,9 @@ public class frmCalendario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private com.toedter.calendar.JDateChooser calendar1;
+    private javax.swing.JButton btnBuscar2;
     private javax.swing.JScrollPane jScrollPane1;
+    private com.toedter.calendar.JDateChooser jcFecha;
     private javax.swing.JTable tblAgenda;
     // End of variables declaration//GEN-END:variables
 }

@@ -237,9 +237,9 @@ public class frmLogin extends javax.swing.JFrame {
         
         //metodo buscar usuario
         pass=user.BuscarUsuario(correo);
-        JOptionPane.showMessageDialog(rootPane, contraseña);
-        JOptionPane.showMessageDialog(rootPane, pass);
-        if(pass.equals(contraseña))
+        //JOptionPane.showMessageDialog(rootPane, contraseña);
+        //JOptionPane.showMessageDialog(rootPane, pass);
+        if(pass.equals(contraseña) && !"".equals(pass))
         {
         
              //Boton para pasar de una ventana
