@@ -38,7 +38,6 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
         btnCalendario = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        btnAjustes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,7 +70,7 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btnMover)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 390, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 420, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
@@ -88,7 +87,7 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 60));
 
         pnlMover.setBackground(new java.awt.Color(204, 204, 204));
         pnlMover.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,7 +96,6 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("MIEMBROS");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
 
@@ -110,7 +108,7 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
         btnSalir.setText(" Salir");
         btnSalir.setBorder(null);
         btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        pnlMover.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 130, 40));
+        pnlMover.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 130, 40));
 
         btnHome.setBackground(new java.awt.Color(204, 204, 204));
         btnHome.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
@@ -125,7 +123,7 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
                 btnHomeActionPerformed(evt);
             }
         });
-        pnlMover.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 130, 40));
+        pnlMover.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 130, 40));
 
         btnCalendario.setBackground(new java.awt.Color(204, 204, 204));
         btnCalendario.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
@@ -135,26 +133,15 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
         btnCalendario.setActionCommand(" Calendario");
         btnCalendario.setBorder(null);
         btnCalendario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        pnlMover.add(btnCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 130, 40));
+        pnlMover.add(btnCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 130, 40));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("CATEGORIAS");
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
-
         pnlMover.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 130, -1));
 
-        btnAjustes.setBackground(new java.awt.Color(204, 204, 204));
-        btnAjustes.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        btnAjustes.setForeground(new java.awt.Color(102, 102, 102));
-        btnAjustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-acerca-de-24.png"))); // NOI18N
-        btnAjustes.setText("Acerca de");
-        btnAjustes.setBorder(null);
-        btnAjustes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        pnlMover.add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 130, 40));
+        jLabel2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
+        jLabel2.setText("CATEGORIAS");
+        pnlMover.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 100, -1));
 
         getContentPane().add(pnlMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 130, 380));
 
@@ -212,7 +199,6 @@ public class frmCalendarioEstudiantes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAjustes;
     private javax.swing.JButton btnCalendario;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnMover;

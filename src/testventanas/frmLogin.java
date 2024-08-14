@@ -133,7 +133,7 @@ public class frmLogin extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(234, 234, 234));
         jButton2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(191, 17, 145));
-        jButton2.setText("Crear cuenta nueva");
+        jButton2.setText("No tengo una cuenta");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +163,11 @@ public class frmLogin extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(191, 17, 145));
         jButton1.setText("Ingresar como estudiante");
         jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         pnlIfoUsuario.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 170, 30));
 
         getContentPane().add(pnlIfoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 390, 490));
@@ -194,7 +199,10 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+       frmRegistro newframe = new frmRegistro();
+        newframe.setVisible(true);
+        //no acomlar evntanas
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -234,6 +242,7 @@ public class frmLogin extends javax.swing.JFrame {
         if(pass.equals(contraseña))
         {
         
+             //Boton para pasar de una ventana
         frmMenu frmMenu = new frmMenu();
         frmMenu.setVisible(true);
         this.dispose();
@@ -244,6 +253,13 @@ public class frmLogin extends javax.swing.JFrame {
         }
             
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        frmCalendarioEstudiantes newframe = new frmCalendarioEstudiantes();
+        newframe.setVisible(true);
+        //no acomlar evntanas
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

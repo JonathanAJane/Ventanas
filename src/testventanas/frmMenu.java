@@ -29,6 +29,7 @@ public class frmMenu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnMover = new javax.swing.JButton();
+        pnlContenido = new javax.swing.JPanel();
         pnlMover = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -39,7 +40,6 @@ public class frmMenu extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnPerfil = new javax.swing.JButton();
         btnAjustes = new javax.swing.JButton();
-        pnlContenido = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,6 +75,8 @@ public class frmMenu extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 60));
 
+        pnlContenido.setBackground(new java.awt.Color(255, 255, 255));
+
         pnlMover.setBackground(new java.awt.Color(204, 204, 204));
         pnlMover.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -82,7 +84,6 @@ public class frmMenu extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("MIEMBROS");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
 
@@ -95,6 +96,11 @@ public class frmMenu extends javax.swing.JFrame {
         btnSalir.setText(" Salir");
         btnSalir.setBorder(null);
         btnSalir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         pnlMover.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 130, 40));
 
         btnHome.setBackground(new java.awt.Color(204, 204, 204));
@@ -126,7 +132,6 @@ public class frmMenu extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dubai", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("CATEGORIAS");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
 
@@ -139,6 +144,11 @@ public class frmMenu extends javax.swing.JFrame {
         btnPerfil.setText("Perfil");
         btnPerfil.setBorder(null);
         btnPerfil.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerfilActionPerformed(evt);
+            }
+        });
         pnlMover.add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 130, 40));
 
         btnAjustes.setBackground(new java.awt.Color(204, 204, 204));
@@ -148,22 +158,29 @@ public class frmMenu extends javax.swing.JFrame {
         btnAjustes.setText("Acerca de");
         btnAjustes.setBorder(null);
         btnAjustes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAjustes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjustesActionPerformed(evt);
+            }
+        });
         pnlMover.add(btnAjustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 130, 40));
-
-        getContentPane().add(pnlMover, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 130, 380));
 
         javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
         pnlContenido.setLayout(pnlContenidoLayout);
         pnlContenidoLayout.setHorizontalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                .addComponent(pnlMover, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 550, Short.MAX_VALUE))
         );
         pnlContenidoLayout.setVerticalGroup(
             pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(pnlContenidoLayout.createSequentialGroup()
+                .addComponent(pnlMover, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 550, 380));
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 680, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,7 +200,36 @@ public class frmMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         //frmc
         
+        frmCalendario newframe = new frmCalendario();
+        newframe.setVisible(true);
+        //no acomlar evntanas
+        this.dispose();
+        
+        
     }//GEN-LAST:event_btnCalendarioActionPerformed
+
+    private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
+       
+      frmRegistro newframe = new frmRegistro();
+        newframe.setVisible(true);
+        //no acomlar evntanas
+        this.dispose();  
+        
+    }//GEN-LAST:event_btnPerfilActionPerformed
+
+    private void btnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjustesActionPerformed
+        frmAcercade newframe = new frmAcercade();
+        newframe.setVisible(true);
+        //no acomlar evntanas
+        this.dispose();
+    }//GEN-LAST:event_btnAjustesActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       frmLogin newframe = new frmLogin();
+        newframe.setVisible(true);
+        //no acomlar evntanas
+        this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
