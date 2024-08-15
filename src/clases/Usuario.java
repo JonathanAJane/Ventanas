@@ -115,7 +115,7 @@ public class Usuario {
         conBD.conectar();
         Statement sql=conBD.smtSQL();
        
-        query="insert into usuarios (nombre_completo,tipo_usuario,telefono,correo,estatus,foto) "
+        query="insert into usuarios (nombre,apellido,password,email,telefono) "
                 + "values('"+getNombre()+"','"+getApellido()+"','"+getContraseña()+"','"+getCorreo()+"','"+getTelefono()+"');";
        
         //EJECUTAR LA CONSULTA

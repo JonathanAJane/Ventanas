@@ -240,7 +240,7 @@ public class frmRegistro extends javax.swing.JFrame {
 
         
         
-        user=new Usuario(0,txtNombre.getText(),txtApellido.getText(),txtContraseña.getText()/*Usar el get correcto para obetener el String de la contraseña*/,txtTelefono.getText(),txtCorreo.getText());
+        user=new Usuario(0,txtNombre.getText(),txtApellido.getText(),txtContraseña.getText(),txtCorreo.getText(),txtTelefono.getText());
         
         JOptionPane.showMessageDialog(null,txtContraseña.getText());
         JOptionPane.showMessageDialog(null,txtConfirmarContraseña.getText());
