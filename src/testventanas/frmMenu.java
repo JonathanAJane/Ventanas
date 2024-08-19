@@ -209,7 +209,7 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
        
-      frmRegistro newframe = new frmRegistro();
+      frmUsuario newframe = new frmUsuario();
         newframe.setVisible(true);
         //no acomlar evntanas
         this.dispose();  

@@ -6,6 +6,7 @@ package testventanas;
 
 
 import clases.Conexion;
+import clases.Sesion;
 import clases.Usuario;
 import java.awt.Image;
 import java.sql.Statement;
@@ -17,12 +18,15 @@ import javax.swing.JOptionPane;
  * @author Jonathan Jané
  */
 public class frmLogin extends javax.swing.JFrame {
+    
+    //public Sesion ssn = new Sesion();
 
     /**
      * Creates new form frmLogin
      */
     public frmLogin() {
         initComponents();
+        //System.out.println(ssn.nombre);
         this.lblOcultar.setVisible(false); //inicializa en falso el ojo
         
         //setIconImage(new ImageIcon(getClass().getResource("/img/icono.png")).getImage());
@@ -228,24 +232,45 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
        
+        String[] registros = new String[6];
         String correo;
         String contraseña="",pass="8";
+        int id;
         Conexion conBD= new Conexion("localhost", "root", "", "bdreserv");
+        Sesion sessionManager = Sesion.getInstance();
         
         correo=txtCorreo.getText();
         contraseña=txtContraseña.getText();
         
         //metodo buscar usuario
-        pass=user.BuscarUsuario(correo);
+        registros=user.BuscarDatos(correo);
+        pass=registros[3];
+       // ssn.id_usuario=Integer.parseInt(registros[0]);
+       // ssn.nombre=registros[1];
+       // ssn.apellido=registros[2];
+       // ssn.correo=registros[4];
+       // ssn.telefono=registros[5];
+        
+        
         //JOptionPane.showMessageDialog(rootPane, contraseña);
         //JOptionPane.showMessageDialog(rootPane, pass);
         if(pass.equals(contraseña) && !"".equals(pass))
         {
+            
+            
+            sessionManager.setAttribute("id", registros[0] );
+            sessionManager.setAttribute("nombre", registros[1] );
+            sessionManager.setAttribute("apellido", registros[2] );
+            sessionManager.setAttribute("correo", registros[4] );
+            sessionManager.setAttribute("telefono", registros[5] );
+            
+            /*String nombre = (String) sessionManager.getAttribute("nombre");
+            JOptionPane.showMessageDialog(rootPane, nombre);*/
         
              //Boton para pasar de una ventana
-        frmMenu frmMenu = new frmMenu();
-        frmMenu.setVisible(true);
-        this.dispose();
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.setVisible(true);
+            this.dispose();
         }
         else
         {

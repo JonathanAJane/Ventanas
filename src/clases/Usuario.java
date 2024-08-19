@@ -274,6 +274,7 @@ public class Usuario {
        
          try {
             ResultSet rs = sql.executeQuery(query); //resulset es para variables que almaceanaran un conjunto de registros
+            
             return rs;  
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -282,28 +283,39 @@ public class Usuario {
     }
     
     
-    public String BuscarUsuario(String usuario)// throws SQLException
+    public String[] BuscarDatos(String usuario)// throws SQLException
     {
         String password="";
         conBD.conectar();
         Statement sql=conBD.smtSQL();
         ResultSet rs=null;
-        String query="SELECT password FROM usuarios WHERE email ='"+usuario+"'";
+        String[] registros = new String[6];
+        String query="SELECT * FROM usuarios WHERE email ='"+usuario+"'";
         System.out.println(query);
+         
         //JOptionPane.showMessageDialog(parentComponent, query);
         try
         {
             System.out.println("-----------------"+password);
             rs=sql.executeQuery(query);
-            while (rs.next()) 
-                password=rs.getString("password");
-            System.out.println("-----------------"+password);
+           
+            if(rs.next()) {
+                registros[0] = rs.getString("idUsuarios");
+                registros[1] = rs.getString("nombre");
+                registros[2] = rs.getString("apellido");
+                registros[3] = rs.getString("password");
+                registros[4] = rs.getString("email");
+                registros[5] = rs.getString("telefono");
+                
+            }
+            
         }
         catch(SQLException e)
         {
             System.out.println(e.getMessage());
         }
-        return password;     
+        
+        return registros;     
         
     }
     

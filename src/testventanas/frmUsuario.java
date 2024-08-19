@@ -4,17 +4,38 @@
  */
 package testventanas;
 
+
+import clases.Conexion;
+import clases.Sesion;
+import clases.Usuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Denisse
  */
 public class frmUsuario extends javax.swing.JFrame {
+    
+    //public Sesion ssn = new Sesion();
 
     /**
      * Creates new form frmUsuario
      */
     public frmUsuario() {
         initComponents();
+         Sesion sessionManager = Sesion.getInstance();
+        String nombre = (String) sessionManager.getAttribute("nombre");
+        String apellido = (String) sessionManager.getAttribute("apellido");
+        String correo = (String) sessionManager.getAttribute("correo");
+        String telefono = (String) sessionManager.getAttribute("telefono");
+        
+        txtNombre.setText(nombre+" "+apellido);
+        txtCorreo.setText(correo);
+        txtTelefono.setText(telefono);
+        
+        
+        //JOptionPane.showMessageDialog(rootPane, nombre);
+        //System.out.println(ssn.nombre);
     }
 
     /**
@@ -28,14 +49,15 @@ public class frmUsuario extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -52,6 +74,10 @@ public class frmUsuario extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setFont(new java.awt.Font("Dubai Light", 0, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Usuario");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -59,6 +85,11 @@ public class frmUsuario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 709, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -66,6 +97,11 @@ public class frmUsuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 100));
@@ -73,16 +109,16 @@ public class frmUsuario extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(191, 17, 145));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(191, 17, 145));
-        jTextField1.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(242, 242, 242));
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefono.setBackground(new java.awt.Color(191, 17, 145));
+        txtTelefono.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(242, 242, 242));
+        txtTelefono.setBorder(null);
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtTelefonoActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 216, 20));
+        jPanel3.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 216, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-teléfono-30.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, 30, 40));
@@ -91,16 +127,16 @@ public class frmUsuario extends javax.swing.JFrame {
         jLabel2.setText("Dirección de correo electrónico");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
 
-        jTextField2.setBackground(new java.awt.Color(191, 17, 145));
-        jTextField2.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(242, 242, 242));
-        jTextField2.setBorder(null);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.setBackground(new java.awt.Color(191, 17, 145));
+        txtNombre.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(242, 242, 242));
+        txtNombre.setBorder(null);
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 216, 20));
+        jPanel3.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 216, 20));
 
         jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setText("Télefono");
@@ -109,16 +145,16 @@ public class frmUsuario extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-usuario-30.png"))); // NOI18N
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 30, 40));
 
-        jTextField3.setBackground(new java.awt.Color(191, 17, 145));
-        jTextField3.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(242, 242, 242));
-        jTextField3.setBorder(null);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtCorreo.setBackground(new java.awt.Color(191, 17, 145));
+        txtCorreo.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(242, 242, 242));
+        txtCorreo.setBorder(null);
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtCorreoActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 216, 20));
+        jPanel3.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 216, 20));
 
         jLabel6.setForeground(new java.awt.Color(242, 242, 242));
         jLabel6.setText("Nombre");
@@ -134,19 +170,24 @@ public class frmUsuario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        frmMenu newframe = new frmMenu();
+        newframe.setVisible(true);
+        //no acomlar evntanas
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtTelefonoActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtCorreoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,14 +228,15 @@ public class frmUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

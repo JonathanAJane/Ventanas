@@ -26,7 +26,9 @@ public class Reservacion {
     private Time hora_inicio;
     private Time hora_fin;
     private int id_aula;
-    private String organizador;
+    private int id_organizador;
+    
+    
     
     
     public Reservacion(){
@@ -38,10 +40,10 @@ public class Reservacion {
         this.hora_inicio=null;
         this.hora_fin=null;
         this.id_aula=0;
-        this.organizador="";
+        this.id_organizador=0;
     }
 
-    public Reservacion(int id_reservacion, String descripcion, String conferencista, int visitantes, Date fecha, Time hora_inicio, Time hora_fin, int id_aula, String organizador) {
+    public Reservacion(int id_reservacion, String descripcion, String conferencista, int visitantes, Date fecha, Time hora_inicio, Time hora_fin, int id_aula, int id_organizador) {
         this.id_reservacion = id_reservacion;
         this.descripcion = descripcion;
         this.conferencista = conferencista;
@@ -50,7 +52,7 @@ public class Reservacion {
         this.hora_inicio = hora_inicio;
         this.hora_fin = hora_fin;
         this.id_aula = id_aula;
-        this.organizador = organizador;
+        this.id_organizador = id_organizador;
     }
 
     public void setId_reservacion(int id_reservacion) {
@@ -85,8 +87,8 @@ public class Reservacion {
         this.id_aula = id_aula;
     }
 
-    public void setOrganizador(String Organizador) {
-        this.organizador = Organizador;
+    public void setId_organizador(String Organizador) {
+        this.id_organizador = id_organizador;
     }
 
     public void setConBD(Conexion conBD) {
@@ -125,8 +127,8 @@ public class Reservacion {
         return id_aula;
     }
 
-    public String getOrganizador() {
-        return organizador;
+    public int getId_organizador() {
+        return id_organizador;
     }
 
     public Conexion getConBD() {
@@ -160,6 +162,7 @@ public class Reservacion {
         return rs;
 
     }
+    //(boton de atras)//
     
     
 }
